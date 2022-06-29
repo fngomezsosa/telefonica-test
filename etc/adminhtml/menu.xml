@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Telefonica::top_level" title="Telefonica" module="Telefonica_Test" sortOrder="10" resource="Magento_Backend::content"/>
+        <add id="Telefonica_Test::empleado" title="Empleado" module="Telefonica_Test" sortOrder="10" resource="Magento_Backend::content" parent="Telefonica::top_level" action="telefonica_test/empleado/index"/>
+        <add id="Telefonica_Test::empresa" title="Empresa" module="Telefonica_Test" sortOrder="10" resource="Magento_Backend::content" parent="Telefonica::top_level" action="telefonica_test/empresa/index"/>
+    </menu>
+</config>

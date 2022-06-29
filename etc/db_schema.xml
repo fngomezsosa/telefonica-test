@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table comment="Empleado" engine="innodb" name="empleado" resource="default">
+        <column xsi:type="smallint" name="empleado_id" nullable="false" comment="Empleado Id" identity="true" unsigned="true" />
+        <column xsi:type="smallint" name="empresa_id" nullable="false" comment="Empresa Id" identity="false" unsigned="true"/>
+        <column xsi:type="varchar" name="nombre" nullable="true" length="255" comment="Nombre del empleado"/>
+        <column xsi:type="varchar" name="apellido" nullable="true" length="200" comment="Apellido del empleado"/>
+        <column xsi:type="int" name="edad" nullable="true" default="0" comment="Edad del empleado"/>
+        <column xsi:type="varchar" name="tipo" nullable="true" length="200" comment="Tipo del empleado"/>
+
+        <constraint referenceId="PRIMARY" xsi:type="primary">
+            <column name="empleado_id"/>
+        </constraint>
+
+        <constraint xsi:type="foreign" referenceId="EMPRESA_EMPRESA_ID_EMPLEADO_EMPRESA_ID" table="empleado" column="empresa_id" referenceTable="empresa" referenceColumn="empresa_id"/>
+    </table>
+
+    <table comment="Empresa" engine="innodb" name="empresa" resource="default">
+        <column xsi:type="smallint" name="empresa_id" nullable="false" comment="Empresa Id" identity="true" unsigned="true"/>
+        <column xsi:type="varchar" name="nombre" nullable="true" length="255" comment="Nombre de la empresa"/>
+
+        <constraint referenceId="PRIMARY" xsi:type="primary">
+            <column name="empresa_id"/>
+        </constraint>
+    </table>
+</schema>

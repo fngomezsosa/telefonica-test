@@ -1,0 +1,25 @@
+{
+    "name": "telefonica/test",
+    "description": "Test",
+    "type": "magento2-module",
+    "license": [
+        "OSL-3.0"
+    ],
+    "authors": [
+        {
+            "name": "Federico Gomez",
+            "email": "fngomezsosa@gmail.com"
+        }
+    ],
+    "require": {
+        "magento/framework": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Telefonica\\Test\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}

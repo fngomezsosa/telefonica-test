@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="Telefonica\Test\Model\ResourceModel\Empleado\Grid\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">empleado</argument>
+            <argument name="resourceModel" xsi:type="string">Telefonica\Test\Model\ResourceModel\Empleado</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="empleadoinfo_empleado_index_listing_data_source" xsi:type="string">Telefonica\Test\Model\ResourceModel\Empleado\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <virtualType name="Telefonica\Test\Model\ResourceModel\Empresa\Grid\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">empresa</argument>
+            <argument name="resourceModel" xsi:type="string">Telefonica\Test\Model\ResourceModel\Empresa</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="empresainfo_empresa_index_listing_data_source" xsi:type="string">Telefonica\Test\Model\ResourceModel\Empresa\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
